@@ -1,0 +1,5 @@
+﻿Idea elegida: juego de Mascota virtual
+juego con anuncios para monetización
+* que hice desde la última reunión diaria hasta ahora? Pensar y plantear ideas
+* en que voy a estar trabajando desde ahora hasta la próxima reunión? Buscar un lenguaje de programación o entorno para desarrollar
+* qué problemas o impedimentos tengo? El tiempo
