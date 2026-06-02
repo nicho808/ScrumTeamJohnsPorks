@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://wy8x7030bo1w"]
+
+[ext_resource type="Script" uid="uid://cqwbk5hsby42y" path="res://mundo_principal.gd" id="1_3j017"]
+[ext_resource type="Texture2D" uid="uid://c02pykonqf2iq" path="res://icon.svg" id="2_226u2"]
+
+[node name="MundoPrincipal" type="Control" unique_id=1264624517]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3j017")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=264625978]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BarraHambre" type="ProgressBar" parent="VBoxContainer" unique_id=119113539]
+layout_mode = 2
+value = 100.0
+
+[node name="BarraEnergia" type="ProgressBar" parent="VBoxContainer" unique_id=47655400]
+layout_mode = 2
+value = 100.0
+
+[node name="BarraDiversion" type="ProgressBar" parent="VBoxContainer" unique_id=456732164]
+layout_mode = 2
+value = 100.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=311478136]
+layout_mode = 2
+text = "Alimentar
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=897180503]
+layout_mode = 2
+text = "Dormir
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=238156822]
+position = Vector2(258, 502)
+texture = ExtResource("2_226u2")
+
+[node name="FiltroNoche" type="ColorRect" parent="." unique_id=1331972897]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09411765, 0.011764706, 0.2509804, 0.2627451)
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
