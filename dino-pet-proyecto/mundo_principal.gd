@@ -7,6 +7,7 @@ extends Control
 
 # Enlazamos el filtro de oscuridad que creamos
 @onready var filtro_noche = $FiltroNoche
+@onready var godzilla_dormido = $godzilla_dormido
 
 # Variables numéricas de las necesidades
 var hambre : float = 100.0
@@ -68,7 +69,9 @@ func _on_button_2_pressed(): # Nota: El nombre puede variar según el orden de t
 	
 	if esta_durmiendo:
 		filtro_noche.visible = true
+		godzilla_dormido.visible = true
 		print("La mascota se ha dormido.")
 	else:
 		filtro_noche.visible = false
+		godzilla_dormido.visible = false
 		print("La mascota se ha despertado.")

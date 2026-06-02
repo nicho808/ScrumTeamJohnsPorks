@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://wy8x7030bo1w"]
 
 [ext_resource type="Script" uid="uid://cqwbk5hsby42y" path="res://mundo_principal.gd" id="1_3j017"]
-[ext_resource type="Texture2D" uid="uid://c02pykonqf2iq" path="res://icon.svg" id="2_226u2"]
+[ext_resource type="Texture2D" uid="uid://vtmmxbnxdqmm" path="res://Imagenes/godzilla.png" id="2_8i5fq"]
+[ext_resource type="Texture2D" uid="uid://cb3efule122ws" path="res://Imagenes/FondoCielo.png" id="3_8i5fq"]
+[ext_resource type="Texture2D" uid="uid://cwucrja641pr7" path="res://Imagenes/godzilla_dormido.png" id="3_nex1a"]
 
 [node name="MundoPrincipal" type="Control" unique_id=1264624517]
 layout_mode = 3
@@ -10,8 +12,10 @@ script = ExtResource("1_3j017")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=264625978]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 125.0
+offset_top = 63.0
+offset_right = 503.0
+offset_bottom = 272.0
 
 [node name="BarraHambre" type="ProgressBar" parent="VBoxContainer" unique_id=119113539]
 layout_mode = 2
@@ -25,29 +29,86 @@ value = 100.0
 layout_mode = 2
 value = 100.0
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=311478136]
-layout_mode = 2
-text = "Alimentar
-"
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=594173003]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 63.0
+offset_right = 123.0
+offset_bottom = 272.0
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=897180503]
+[node name="TextoHambre" type="Label" parent="VBoxContainer2" unique_id=438678499]
+custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
-text = "Dormir
-"
+text = "Hambre 🍗"
+horizontal_alignment = 1
+
+[node name="TextoEnergia" type="Label" parent="VBoxContainer2" unique_id=293212001]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+text = "Energia 💤"
+horizontal_alignment = 1
+
+[node name="TextoDiversion" type="Label" parent="VBoxContainer2" unique_id=408566897]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+text = "Diversion 🕹️"
+horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=238156822]
-position = Vector2(258, 502)
-texture = ExtResource("2_226u2")
+position = Vector2(266.5, 559.5)
+scale = Vector2(10.593751, 10.65625)
+texture = ExtResource("2_8i5fq")
+
+[node name="godzilla_dormido" type="Sprite2D" parent="." unique_id=1420287470]
+visible = false
+position = Vector2(266.5, 559.5)
+scale = Vector2(10.593751, 10.65625)
+texture = ExtResource("3_nex1a")
 
 [node name="FiltroNoche" type="ColorRect" parent="." unique_id=1331972897]
+visible = false
+z_index = -9
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 540.0
+offset_bottom = 959.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.09411765, 0.011764706, 0.2509804, 0.2627451)
+mouse_filter = 2
+color = Color(0.09411765, 0.011764706, 0.2509804, 0.5568628)
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1222795002]
+show_behind_parent = true
+z_index = -10
+layout_mode = 0
+offset_left = 1.0
+offset_right = 541.0
+offset_bottom = 960.0
+mouse_filter = 2
+texture = ExtResource("3_8i5fq")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=879833865]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 746.0
+offset_right = 344.0
+offset_bottom = 806.0
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=311478136]
+layout_mode = 2
+text = "Alimentar
+"
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=897180503]
+layout_mode = 2
+text = "Dormir
+"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
