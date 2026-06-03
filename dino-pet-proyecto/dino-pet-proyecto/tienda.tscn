@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cc387uq7o3m1p"]
+
+[ext_resource type="Script" uid="uid://txxj6c5jdij3" path="res://tienda.gd" id="1_ko86m"]
+[ext_resource type="Texture2D" uid="uid://c02pykonqf2iq" path="res://icon.svg" id="2_sruq1"]
+
+[node name="Tienda" type="Control" unique_id=572468521]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ko86m")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1878544521]
+show_behind_parent = true
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelMonedas" type="Label" parent="." unique_id=1637875394]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 38.0
+offset_right = 143.0
+offset_bottom = 87.0
+text = "Monedas: 0"
+
+[node name="ButtonComprar" type="Button" parent="." unique_id=1235054878]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 269.0
+offset_right = 175.0
+offset_bottom = 327.0
+text = "Comprar Manzana ($10)"
+
+[node name="ButtonVolver" type="Button" parent="." unique_id=1243314236]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 730.0
+offset_right = 336.0
+offset_bottom = 866.0
+icon = ExtResource("2_sruq1")
+
+[connection signal="pressed" from="ButtonComprar" to="." method="_on_button_comprar_pressed"]
+[connection signal="pressed" from="ButtonVolver" to="." method="_on_button_volver_pressed"]
