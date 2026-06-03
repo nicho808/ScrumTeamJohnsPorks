@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cc387uq7o3m1p"]
+
+[ext_resource type="Script" uid="uid://txxj6c5jdij3" path="res://tienda.gd" id="1_ko86m"]
+[ext_resource type="Texture2D" uid="uid://bascsc8c4625r" path="res://Imagenes/FondoPaisaje.png" id="2_yvia3"]
+[ext_resource type="Texture2D" uid="uid://cbyg7qwe6nal1" path="res://Imagenes/BotonCasa.png" id="3_choep"]
+[ext_resource type="Texture2D" uid="uid://cy8bdvp6oc1xy" path="res://Imagenes/filetepixel.png" id="4_q55e7"]
+
+[node name="Tienda" type="Control" unique_id=572468521]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ko86m")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1878544521]
+show_behind_parent = true
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yvia3")
+
+[node name="LabelMonedas" type="Label" parent="." unique_id=1637875394]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 38.0
+offset_right = 143.0
+offset_bottom = 87.0
+text = "Monedas: 0"
+
+[node name="ButtonComprar" type="Button" parent="." unique_id=1235054878]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 269.0
+offset_right = 175.0
+offset_bottom = 327.0
+text = "Comprar Filete ($10)"
+
+[node name="ButtonVolver" type="Button" parent="." unique_id=1243314236]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 832.0
+offset_right = 324.0
+offset_bottom = 954.0
+icon = ExtResource("3_choep")
+flat = true
+expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=874844870]
+position = Vector2(120, 179.5)
+scale = Vector2(5.375, 5.28125)
+texture = ExtResource("4_q55e7")
+
+[connection signal="pressed" from="ButtonComprar" to="." method="_on_button_comprar_pressed"]
+[connection signal="pressed" from="ButtonVolver" to="." method="_on_button_volver_pressed"]

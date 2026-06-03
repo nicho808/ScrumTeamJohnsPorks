@@ -9,10 +9,18 @@ extends Control
 @onready var filtro_noche = $FiltroNoche
 @onready var godzilla_dormido = $godzilla_dormido
 
-# Variables numéricas de las necesidades
-var hambre : float = 100.0
-var energia : float = 100.0
-var diversion : float = 100.0
+# Ahora los valores vienen del Global y no de aquí mismo
+var hambre : float :
+	get: return Global.hambre
+	set(val): Global.hambre = val
+
+var energia : float :
+	get: return Global.energia
+	set(val): Global.energia = val
+
+var diversion : float :
+	get: return Global.diversion
+	set(val): Global.diversion = val
 
 # NUEVA VARIABLE: Estado de la mascota
 var esta_durmiendo : bool = false
@@ -54,13 +62,21 @@ func actualizar_interfaz():
 
 # Tu función anterior de alimentar
 func _on_button_pressed():
-	# Si está durmiendo, no podemos alimentarlo
+	# Si está durmiendo, cortamos la función
 	if esta_durmiendo:
 		print("¡No puedes alimentar a una mascota dormida!")
-		return # Corta la función aquí y no hace lo de abajo
+		return 
 		
-	hambre += 20.0
-	hambre = clamp(hambre, 0, 100)
+	# Revisamos si tenemos comida en el script Global
+	if Global.filetes > 0:
+		Global.filetes -= 1       # Restamos una manzana del inventario
+		hambre += 20.0             # Subimos el hambre
+		hambre = clamp(hambre, 0, 100)
+		print("¡Ñam! Filetes restantes: ", Global.filetes)
+	else:
+		print("No tienes comida. ¡Ve a la tienda!")
+		
+	actualizar_interfaz()
 
 # NUEVA FUNCIÓN: Al presionar el botón de Dormir
 func _on_button_2_pressed(): # Nota: El nombre puede variar según el orden de tu botón, asegúrate que coincida con tu señal.
@@ -75,3 +91,9 @@ func _on_button_2_pressed(): # Nota: El nombre puede variar según el orden de t
 		filtro_noche.visible = false
 		godzilla_dormido.visible = false
 		print("La mascota se ha despertado.")
+
+
+func _on_button_tienda_pressed() -> void: # El nombre dependerá de cómo se llamó tu botón
+	# Esta línea le dice a Godot que destruya esta escena y abra la tienda
+	get_tree().change_scene_to_file("res://tienda.tscn")
+	pass
