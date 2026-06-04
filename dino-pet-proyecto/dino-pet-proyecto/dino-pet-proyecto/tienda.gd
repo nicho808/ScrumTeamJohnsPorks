@@ -15,9 +15,9 @@ func actualizar_texto_monedas():
 func _on_button_comprar_pressed():
 	if Global.monedas >= 10:
 		Global.monedas -= 10     # Restamos dinero
-		Global.filetes += 1     # Sumamos comida al inventario
+		Global.manzanas += 1     # Sumamos comida al inventario
 		actualizar_texto_monedas()
-		print("Compraste un filete. Tienes: ", Global.filetes)
+		print("Compraste una manzana. Tienes: ", Global.manzanas)
 	else:
 		print("No tienes suficiente dinero.")
 

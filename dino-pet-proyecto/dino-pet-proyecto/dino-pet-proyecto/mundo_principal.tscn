@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://vtmmxbnxdqmm" path="res://Imagenes/godzilla.png" id="2_8i5fq"]
 [ext_resource type="Texture2D" uid="uid://cb3efule122ws" path="res://Imagenes/FondoCielo.png" id="3_8i5fq"]
 [ext_resource type="Texture2D" uid="uid://cwucrja641pr7" path="res://Imagenes/godzilla_dormido.png" id="3_nex1a"]
-[ext_resource type="Texture2D" uid="uid://bhskem7oj21ai" path="res://Imagenes/BotonTienda.png" id="5_xe02v"]
-[ext_resource type="Texture2D" uid="uid://c02pykonqf2iq" path="res://icon.svg" id="6_lbld3"]
+[ext_resource type="Texture2D" uid="uid://c02pykonqf2iq" path="res://icon.svg" id="5_xe02v"]
 
 [node name="MundoPrincipal" type="Control" unique_id=1264624517]
 layout_mode = 3
@@ -114,24 +113,12 @@ text = "Dormir
 
 [node name="ButtonTienda" type="Button" parent="." unique_id=1095446421]
 layout_mode = 0
-offset_left = 211.0
-offset_top = 839.0
-offset_right = 324.0
-offset_bottom = 937.0
+offset_left = 149.0
+offset_top = 809.0
+offset_right = 285.0
+offset_bottom = 945.0
 icon = ExtResource("5_xe02v")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="ButtonJugar" type="Button" parent="." unique_id=300042605]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 794.0
-offset_right = 191.0
-offset_bottom = 930.0
-icon = ExtResource("6_lbld3")
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="ButtonTienda" to="." method="_on_button_tienda_pressed"]
-[connection signal="pressed" from="ButtonJugar" to="." method="_on_button_jugar_pressed"]

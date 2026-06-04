@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bc44k26u6levm"]
+
+[ext_resource type="Texture2D" uid="uid://c02pykonqf2iq" path="res://icon.svg" id="1_nia5u"]
+[ext_resource type="Script" uid="uid://cuh32cetiq4ol" path="res://minijuego.gd" id="1_t4vm0"]
+
+[node name="Minijuego" type="Control" unique_id=1184311450]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 540.0
+offset_bottom = 960.0
+script = ExtResource("1_t4vm0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1549185035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonVolver" type="Button" parent="." unique_id=808775388]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 757.0
+offset_right = 350.0
+offset_bottom = 893.0
+icon = ExtResource("1_nia5u")
+
+[node name="Timer" type="Timer" parent="." unique_id=42127108]
+autostart = true
+
+[connection signal="pressed" from="ButtonVolver" to="." method="_on_button_volver_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -68,11 +68,11 @@ func _on_button_pressed():
 		return 
 		
 	# Revisamos si tenemos comida en el script Global
-	if Global.filetes > 0:
-		Global.filetes -= 1       # Restamos una manzana del inventario
+	if Global.manzanas > 0:
+		Global.manzanas -= 1       # Restamos una manzana del inventario
 		hambre += 20.0             # Subimos el hambre
 		hambre = clamp(hambre, 0, 100)
-		print("¡Ñam! Filetes restantes: ", Global.filetes)
+		print("¡Ñam! Manzanas restantes: ", Global.manzanas)
 	else:
 		print("No tienes comida. ¡Ve a la tienda!")
 		
@@ -97,7 +97,3 @@ func _on_button_tienda_pressed() -> void: # El nombre dependerá de cómo se lla
 	# Esta línea le dice a Godot que destruya esta escena y abra la tienda
 	get_tree().change_scene_to_file("res://tienda.tscn")
 	pass
-
-
-func _on_button_jugar_pressed():
-	get_tree().change_scene_to_file("res://minijuego.tscn")
